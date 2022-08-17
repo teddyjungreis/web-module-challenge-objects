@@ -134,7 +134,7 @@ function addReview(array, name, rating, feedback){
   return(array);
 }
 
-addReview(reviews, 'Daniela', 5, 'Beautiful atmosphere and wonderful vegan options!');
+//addReview(reviews, 'Daniela', 5, 'Beautiful atmosphere and wonderful vegan options!');
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -174,9 +174,15 @@ Use the getLastReview function below to do the following:
 
 
 function getLastReview(array) {
-  /*Your code here*/
+  let lastReviewIndex = array.length - 1;
+  let lastReviewName = array[lastReviewIndex].name;
+  let lastReviewRating = array[lastReviewIndex].rating;
+  let lastReviewFeedback = array[lastReviewIndex].feedback;
+  let lastReviewSummary = `${lastReviewName} gave the restaurant a ${lastReviewRating} star review, and their feedback was: ${lastReviewFeedback}`;
+  return (lastReviewSummary);
 } 
 
+getLastReview(reviews);
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
