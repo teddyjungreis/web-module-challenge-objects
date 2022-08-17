@@ -16,10 +16,15 @@ The function should:
 */
 
 
-function createMenuItem(/*Your code here*/){
-  /*Your code here*/
+function createMenuItem(foodName, foodPrice, foodCategory){
+  const newMenuItem = {};
+  newMenuItem.name = foodName;
+  newMenuItem.price = foodPrice;
+  newMenuItem.category = foodCategory;
+  return (newMenuItem);
 }
 
+createMenuItem('tacos', 8, 'Lunch');
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b (not auto-tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -32,6 +37,13 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
+const pizza = createMenuItem("pizza", 5, "lunch");
+const cheeseburger = createMenuItem("cheeseburger", 10, "dinner");
+const iceCream = createMenuItem("ice cream", 3, "dessert" );
+
+console.log(pizza);
+console.log(cheeseburger);
+console.log(iceCream);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -51,8 +63,17 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(person){
+    if (person === "teacher" || person === "student"){
+      return (this.price * 0.75)
+    } else if (person === "public") {
+      return (this.price * 0.90)
+    }
+  } 
 }
+
+burger.discount("public");
+
 
 
 
